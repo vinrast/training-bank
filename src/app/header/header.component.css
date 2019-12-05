@@ -20,7 +20,7 @@ color: #333;
 }
 @media screen and (min-width: 600px) {
     .wrapper-header {
-    height: 15vh;
+    height: 17vh;
     }
     .menu-header li {
     list-style: none;
