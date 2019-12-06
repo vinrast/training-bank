@@ -30,14 +30,15 @@ export class CadastroClientesComponent implements OnInit {
   cadastro = () => {
 
     this.user_service.createUser(this.formCadastro.value).subscribe(data => {
-      localStorage.setItem('user_cpf',data.cpf)
+      this.user_service.storeToken(data.cpf);
     })
+
     this.verificaCadastro();
   }
 
   verificaCadastro() {
   
-    if (localStorage.getItem('user_cpf')) {
+    if (this.user_service.getToken()) {
       this.router.navigate(['home-logada']);
     } else {
       return false;
